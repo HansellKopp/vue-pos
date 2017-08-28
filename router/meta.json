@@ -1,0 +1,37 @@
+{
+  "/": {
+    "title": "Pos Restaurant",
+    "description": "Vuetify.js Project",
+    "keywords": "vue 2.0, vuetify"
+  },
+  "/categories": {
+    "title": "Categories",
+    "description": "",
+    "keywords": ""
+  },
+  "/tables": {
+    "title": "Tables",
+    "description": "",
+    "keywords": ""
+  },
+  "/orders": {
+    "title": "Orders",
+    "description": "",
+    "keywords": ""
+  },
+  "/settings": {
+    "title": "Settings",
+    "description": "",
+    "keywords": ""
+  },
+  "/users": {
+    "title": "Users",
+    "description": "",
+    "keywords": ""
+  },
+  "/login": {
+    "title": "Login",
+    "description": "",
+    "keywords": ""
+  }
+}
