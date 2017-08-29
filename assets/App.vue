@@ -10,9 +10,9 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
-        <v-btn flat>
-          <v-icon left >person_outline</v-icon>
-          Login
+        <v-btn flat :to="login.to">
+          <v-icon left >{{ login.icon }}</v-icon>
+          {{ login.title }}
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
@@ -33,10 +33,8 @@
       <v-list dense>
         <v-list-tile 
           v-for="item in items"
-          :key="item.text"
-          ruoter
+          :key="item.title"
           :to="item.to"
-
         >
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -48,13 +46,16 @@
           </v-list-tile-content>
         </v-list-tile>
         <v-divider></v-divider>
-        <v-list-tile>
+         <v-list-tile 
+          :key="login.text"
+          :to="login.to"
+        >
           <v-list-tile-action>
-            <v-icon>person_outline</v-icon>
+            <v-icon>{{ login.icon }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>
-              login
+              {{ login.title }}
             </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
@@ -80,8 +81,9 @@
           { icon: 'event_seat', title: 'Tables', to: '/tables' },
           { icon: 'edit', title: 'Orders', to: '/orders' },
           { icon: 'supervisor_account', title: 'Users', to: '/users' },
-          { icon: 'settings_applications', title: 'Settings', to: '/users' }
+          { icon: 'settings_applications', title: 'Settings', to: '/settings' }
         ],
+        login :  { icon: 'person_outline', title: 'Login', to: '/login' },
         title: 'Pesetas Restaurant'
       }
     },

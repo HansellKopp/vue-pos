@@ -1,18 +1,9 @@
 <template>
-  <div class="pt-4">
-    <v-breadcrumbs divider="/" class="pt-4 text-xs-left">
-      <v-breadcrumbs-item 
-        v-for="item in links" :key="item.text"
-        :disabled="item.disabled"
-      >
-        {{ item.text }}
-      </v-breadcrumbs-item>
-    </v-breadcrumbs>
   <v-card class="teal lighten-1">
-    <v-card-title>
-      Categories
+    <v-card-title primary>
+      <div class="white--text headline">Categories</div>
       <v-spacer></v-spacer>
-      <v-text-field
+      <v-text-field dark
         append-icon="search"
         label="Search"
         single-line
@@ -33,7 +24,6 @@
       </template>
     </v-data-table>
   </v-card>
-    </div>
 </template>
 
 <script>
@@ -50,46 +40,36 @@
             value: 'name'
           }
         ],
-        links: [
-          {
-            text: 'Yogurt',
-            disabled: false
-          },
-          {
-            text: 'Sandwich',
-            disabled: false
-          }
-        ],
         items: [
           {
-            description: 'Yogurt'
+            description: 'Entradas'
           },
           {
-            description: 'Sandwich'
+            description: 'Ensaladas'
           },
           {
-            description: 'Eclair'
+            description: 'Sopas'
           },
           {
-            description: 'Cupcake'
+            description: 'Pastas'
           },
           {
-            description: 'Gingerbread'
+            description: 'Pescados'
           },
           {
-            description: 'Jelly bean'
+            description: 'Carnes'
           },
           {
-            description: 'Lollipop'
+            description: 'Aves'
           },
           {
-            description: 'Honeycomb'
+            description: 'Postres'
           },
           {
-            description: 'Donut'
+            description: 'Bebidas'
           },
           {
-            description: 'KitKat'
+            description: 'Bebidas Alcoholicas'
           }
         ]
       }

@@ -1,18 +1,9 @@
 <template>
-  <div class="pt-4">
-    <v-breadcrumbs divider="/" class="pt-4 text-xs-left">
-      <v-breadcrumbs-item 
-        v-for="item in links" :key="item.text"
-        :disabled="item.disabled"
-      >
-        {{ item.text }}
-      </v-breadcrumbs-item>
-    </v-breadcrumbs>
   <v-card class="teal lighten-1">
-    <v-card-title>
-      Categories
+    <v-card-title primary-title>
+      <div class="white--text headline">Tables</div>
       <v-spacer></v-spacer>
-      <v-text-field
+      <v-text-field dark
         append-icon="search"
         label="Search"
         single-line
@@ -21,19 +12,19 @@
       ></v-text-field>
     </v-card-title>
     <v-data-table
-        v-bind:headers="headers"
-        v-bind:items="items"
-        v-bind:search="search"
+        :headers="headers"
+        :items="items"
+        :search="search"
       >
       <template slot="items" scope="props">
-        <td>{{ props.item.description }}</td>
+        <td>{{ props.item.place }}</td>
+        <td>{{ props.item.number }}</td>
       </template>
       <template slot="pageText" scope="{ pageStart, pageStop }">
         From {{ pageStart }} to {{ pageStop }}
       </template>
     </v-data-table>
   </v-card>
-    </div>
 </template>
 
 <script>
@@ -44,54 +35,48 @@
         pagination: {},
         headers: [
           {
-            text: 'Description',
+            text: 'Place',
             align: 'left',
             sortable: true,
-            value: 'name'
-          }
-        ],
-        links: [
-          {
-            text: 'Yogurt',
-            disabled: false
+            value: 'place'
           },
           {
-            text: 'Sandwich',
-            disabled: false
+            text: 'Number',
+            align: 'left',
+            sortable: true,
+            value: 'number'
           }
         ],
         items: [
           {
-            description: 'Yogurt'
+            place: 'Terrace',
+            number: '001',
           },
           {
-            description: 'Sandwich'
+            place: 'Terrace',
+            number: '002',
           },
           {
-            description: 'Eclair'
+            place: 'Terrace',
+            number: '003',
           },
           {
-            description: 'Cupcake'
+            place: 'Salon',
+            number: '004',
           },
           {
-            description: 'Gingerbread'
+            place: 'Salon',
+            number: '005',
           },
           {
-            description: 'Jelly bean'
+            place: 'Salon',
+            number: '006',
           },
           {
-            description: 'Lollipop'
-          },
-          {
-            description: 'Honeycomb'
-          },
-          {
-            description: 'Donut'
-          },
-          {
-            description: 'KitKat'
+            place: 'Salon',
+            number: '007',
           }
-        ]
+      ]
       }
     }
   }

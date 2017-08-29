@@ -1,10 +1,7 @@
 <template>
-  <div class="mt-3 pt-5">
-    <v-card class="form-bg elevation-1">
+    <v-card class="form_bg elevation-1">
+      <v-card-title>USER LOGIN</v-card-title>
       <v-card-text>
-          <v-flex xs4>
-              <v-header>USER LOGIN</v-header>
-          </v-flex>
           <v-flex xs6>
             <v-text-field
               name="iemail"
@@ -25,7 +22,6 @@
           <v-btn primary router to="/">Send</v-btn>
         </v-card-actions>
     </v-card>
-    </div>
 </template>
 
 <script>

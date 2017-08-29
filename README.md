@@ -1,19 +1,13 @@
-# Vuetify Webpack SSR Template
+# Vue POS-Restaurant 
 
-> Vuetify SSR Webpack Template
+ Point of Sale
 
-## Build Setup
+## Runtime requiriments
+  nodejs  8.x
+  
+## Install dependencies
+  npm install
 
-``` bash
-vue init vuetifyjs/webpack-ssr
-
-cd webpack-ssr
-
-# npm
-npm install
-
-# yarn
-yarn
-```
-
-For additional information, please visit the [Official Documentation](https://vuetifyjs.com).
+## Run app 
+  npm run dev
+  navigate http://localhost:8000
