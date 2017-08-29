@@ -25,7 +25,7 @@
     </main>
     <v-navigation-drawer
       class="pb-0"
-      persistent
+      temporary
       absolute
       height="100%"
       v-model="drawer" 
@@ -74,7 +74,7 @@
     mixins: [Meta],
     data () {
       return {
-        drawer: true,
+        drawer: false,
         items: [
           { icon: 'home', title: 'Home', to: '/' },
           { icon: 'restaurant_menu', title: 'CategoriesAndProducts', to: '/categories' },
