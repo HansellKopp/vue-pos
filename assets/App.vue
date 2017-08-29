@@ -31,34 +31,23 @@
       v-model="drawer" 
     >
       <v-list dense>
-        <v-list-tile 
-          v-for="item in items"
-          :key="item.title"
-          :to="item.to"
-        >
-          <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>
-              {{ item.title }}
-            </v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-divider></v-divider>
-         <v-list-tile 
-          :key="login.text"
-          :to="login.to"
-        >
-          <v-list-tile-action>
-            <v-icon>{{ login.icon }}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>
-              {{ login.title }}
-            </v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+       <template v-for="(item, i) in items">             
+          <v-divider v-if="item.separator" dark>{{ item.separator }}</v-divider>          
+          <v-list-tile 
+            :key="item.title"
+            :to="item.to"
+            v-else
+          >
+            <v-list-tile-action>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>
+                {{ item.title }} 
+              </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>  
+        </template>
       </v-list>
     </v-navigation-drawer>
     <v-footer fixed>
@@ -78,12 +67,14 @@
         items: [
           { icon: 'home', title: 'Home', to: '/' },
           { icon: 'restaurant_menu', title: 'CategoriesAndProducts', to: '/categories' },
-          { icon: 'event_seat', title: 'Tables', to: '/tables' },
+          { icon: 'event_seat', title: 'Tables', to: '/tables' },          
           { icon: 'edit', title: 'Orders', to: '/orders' },
           { icon: 'supervisor_account', title: 'Users', to: '/users' },
-          { icon: 'settings_applications', title: 'Settings', to: '/settings' }
+          { icon: 'settings_applications', title: 'Settings', to: '/settings' },
+          { separator: true },
+          { icon: 'person_outline', title: 'Login', to: '/login' }
         ],
-        login :  { icon: 'person_outline', title: 'Login', to: '/login' },
+        login: { icon: 'person_outline', title: 'Login', to: '/login' },
         title: 'Pesetas Restaurant'
       }
     },

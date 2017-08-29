@@ -47,37 +47,15 @@
             value: 'number'
           }
         ],
-        items: [
-          {
-            place: 'Terrace',
-            number: '001',
-          },
-          {
-            place: 'Terrace',
-            number: '002',
-          },
-          {
-            place: 'Terrace',
-            number: '003',
-          },
-          {
-            place: 'Salon',
-            number: '004',
-          },
-          {
-            place: 'Salon',
-            number: '005',
-          },
-          {
-            place: 'Salon',
-            number: '006',
-          },
-          {
-            place: 'Salon',
-            number: '007',
-          }
-      ]
+        items: []
       }
+    },
+    created: function() {
+      this.$http.get('/backend/tables/')
+      .then(function(response) {
+        this.items = response.data
+      }
+      )
     }
   }
 </script>

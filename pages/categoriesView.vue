@@ -40,39 +40,15 @@
             value: 'name'
           }
         ],
-        items: [
-          {
-            description: 'Entradas'
-          },
-          {
-            description: 'Ensaladas'
-          },
-          {
-            description: 'Sopas'
-          },
-          {
-            description: 'Pastas'
-          },
-          {
-            description: 'Pescados'
-          },
-          {
-            description: 'Carnes'
-          },
-          {
-            description: 'Aves'
-          },
-          {
-            description: 'Postres'
-          },
-          {
-            description: 'Bebidas'
-          },
-          {
-            description: 'Bebidas Alcoholicas'
-          }
-        ]
+        items: []
       }
+    },
+    created: function() {
+      this.$http.get('/backend/categories/')
+      .then(function(response) {
+        this.items = response.data
+      }
+      )
     }
   }
 </script>

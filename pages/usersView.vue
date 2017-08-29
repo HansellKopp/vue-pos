@@ -54,24 +54,16 @@
             value: 'userType'
           }
         ],
-        items: [
-          {
-            username: 'Pedro Obando',
-            email: 'obandop@gmail.com',
-            userType: 'admin'
-          },
-          {
-            username: 'Hansell Kopp',
-            email: 'hansellkopp@gmail.com',
-            userType: 'admin'
-          },
-          {
-            username: 'Michael Foucault',
-            email: 'michy@academie.com',
-            userType: 'user'
-          },
+        items: [          
         ]
       }
+    },
+    created: function() {
+      this.$http.get('/backend/users/')
+      .then(function(response) {
+        this.items = response.data
+      }
+      )
     }
   }
 </script>

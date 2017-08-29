@@ -59,6 +59,16 @@ const serve = (path, cache) => express.static(resolve(path), {
   maxAge: cache && isProd ? 60 * 60 * 24 * 30 : 0
 })
 
+// backend routes
+// 
+const usersRoute = require('./backend/routes/users')
+const tablesRoute = require('./backend/routes/tables')
+const categoriesRoute = require('./backend/routes/categories')
+
+app.use('/backend/users', usersRoute)
+app.use('/backend/tables', tablesRoute)
+app.use('/backend/categories', categoriesRoute)
+//
 app.use(compression({ threshold: 0 }))
 app.use(favicon('./static/favicon.ico'))
 app.use('/static', serve('./static', true))
