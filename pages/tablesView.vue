@@ -46,16 +46,16 @@
             sortable: true,
             value: 'number'
           }
-        ],
-        items: []
+        ]
       }
     },
-    created: function() {
-      this.$http.get('/backend/tables/')
-      .then(function(response) {
-        this.items = response.data
-      }
-      )
+    computed: {
+       items() {
+         return  this.$store.getters.getAllTables
+       }
+    },
+    created() {
+      this.$store.dispatch('loadTables',this)
     }
   }
 </script>

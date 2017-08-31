@@ -1,56 +1,27 @@
-const dummyProducts = []
-const dummyCategories = [
-    {
-        description: 'Entradas'
-      },
-      {
-        description: 'Ensaladas'
-      },
-      {
-        description: 'Sopas'
-      },
-      {
-        description: 'Pastas'
-      },
-      {
-        description: 'Pescados'
-      },
-      {
-        description: 'Carnes'
-      },
-      {
-        description: 'Aves'
-      },
-      {
-        description: 'Postres'
-      },
-      {
-        description: 'Bebidas'
-      },
-      {
-        description: 'Bebidas Alcoholicas'
-      }
-]
-
-
-module.exports = {
+export default {
     state: {                
         products: [],
         categories: [],
     },
   
-    actions: {
-        loadProducts(context) {
-            context.commit('setProducts', dummyProducts)
+    actions: { 
+        loadCategories(context, app) {
+            return new Promise((resolve) => {
+              app.$http.get('/backend/categories/').then((response) => {
+                context.commit('setCategories', response.data)
+                resolve()
+              })
+            })
         },
-        loadCategories(context) {
-            //this.$http.get('/backend/categories/')
-            //.then(function(response) {
-            //  console.log(response.data)
-            //})
-            context.commit('setCategories', dummyCategories)                        
-        },
-    },
+        loadProducts(context, app) {
+            return new Promise((resolve) => {
+              app.$http.get('/backend/products/').then((response) => {
+                context.commit('setProducts', response.data)
+                resolve()
+              })
+            })
+        }
+     },
   
     mutations: {
         setProducts(state, payload) {

@@ -53,17 +53,16 @@
             sortable: true,
             value: 'userType'
           }
-        ],
-        items: [          
         ]
       }
     },
-    created: function() {
-      this.$http.get('/backend/users/')
-      .then(function(response) {
-        this.items = response.data
-      }
-      )
+    computed: {
+       items() {
+         return  this.$store.getters.getAllUsers
+       }
+    },
+    created() {
+      this.$store.dispatch('loadUsers',this)
     }
   }
 </script>

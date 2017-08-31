@@ -48,7 +48,7 @@
        }
     },
     created() {
-      this.$store.dispatch('loadCategories')
+      this.$store.dispatch('loadCategories',this)
     }
   }
 </script>

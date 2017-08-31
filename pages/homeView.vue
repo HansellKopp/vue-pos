@@ -4,7 +4,7 @@
         <v-card-media
           height="400px"
           :src="image"
-          alt="Wellcome"
+          alt="Welcome"
         >
         <div class='title text-center'>Welcome to POS Restaurant</div>
         </v-card-media>
