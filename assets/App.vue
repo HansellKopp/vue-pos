@@ -32,11 +32,11 @@
     >
       <v-list dense>
        <template v-for="(item, i) in items">             
-          <v-divider v-if="item.separator" dark>{{ item.separator }}</v-divider>          
-          <v-list-tile 
-            :key="item.title"
-            :to="item.to"
+          <v-divider v-if="item.separator" dark></v-divider>          
+          <v-list-tile
             v-else
+            :key="item.title"
+            :to="item.to"           
           >
             <v-list-tile-action>
               <v-icon>{{ item.icon }}</v-icon>

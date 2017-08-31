@@ -1,5 +1,5 @@
 <template>
-  <v-container justify-center align-center  xs10 sm8 md6 offset-xs2>
+  <v-container justify-center align-center xs10 sm6 md6>
       <v-card class="mt-5">
         <v-card-media
           height="400px"

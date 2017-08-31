@@ -1,4 +1,5 @@
 <template>
+  <v-container xs10 sm4 md4 offset-xs1 offset-sm4>
     <v-card class="form_bg elevation-1">
       <v-card-title>USER LOGIN</v-card-title>
       <v-card-text>
@@ -22,6 +23,7 @@
           <v-btn primary router to="/">Send</v-btn>
         </v-card-actions>
     </v-card>
+  </v-container>
 </template>
 
 <script>

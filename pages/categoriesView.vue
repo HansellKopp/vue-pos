@@ -39,16 +39,16 @@
             sortable: true,
             value: 'name'
           }
-        ],
-        items: []
+        ]
       }
     },
-    created: function() {
-      this.$http.get('/backend/categories/')
-      .then(function(response) {
-        this.items = response.data
-      }
-      )
+    computed: {
+       items() {
+         return  this.$store.getters.getAllCategories
+       }
+    },
+    created() {
+      this.$store.dispatch('loadCategories')
     }
   }
 </script>
