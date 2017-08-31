@@ -5,12 +5,21 @@ Vue.use(Vuex)
 
 export function createStore () {
   return new Vuex.Store({
-    state: {},
+    state: {
+      categories: [],
+      products: [],
+      users: [],
+      tables: []
+    },
 
     actions: {},
 
     mutations: {},
 
-    getters: {}
+    getters: {
+      getUsers: () => {
+        
+      }
+    }
   })
 }
